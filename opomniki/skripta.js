@@ -9,6 +9,20 @@ window.addEventListener('load', function() {
 	}
 	
 	document.querySelector("#prijavniGumb").addEventListener("click", izvediPrijavo);
+	
+	var izvediOpomnik = function(event) {
+		var nazivOpomnika = document.querySelector("#naziv_opomnika").value;
+		var casOpomnika = document.querySelector("#cas_opomnika").value;
+		document.querySelector("#opomniki").innerHTML += "<div class='opomnik'><div class='naziv_opomnika'>"+nazivOpomnika+"</div><div class='cas_opomnika'> Opomnik čez <span>"+casOpomnika+"</span> sekund.</div></div>";
+		
+		//document.querySelector(".naziv_opomnika").innerHTML = nazivOpomnika;
+	//	document.querySelector(".cas_opomnika").innerHTML = casOpomnika;
+		
+		document.querySelector("#naziv_opomnika").value = "";
+		document.querySelector("#cas_opomnika").value = "";
+	}
+	
+	document.querySelector("#dodajGumb").addEventListener("click", izvediOpomnik);
 		
 	//Posodobi opomnike
 	var posodobiOpomnike = function() {
